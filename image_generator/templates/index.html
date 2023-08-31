@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>particles.js</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<title>particles.js</title>
+	<!-- Import style.css from root directory -->
+	<link rel="stylesheet" href="./style.css" />
+    <link rel="page2" href="./page2.html"/>
+    <link rel="home" href="./homepage.html"/>
+</head>
+
+<body>
+	<!-- Particles.js div -->
+	<div id="particles-js">
+		<div class="heading">
+			<h1>DALL.E- Image Generation - OpenAI</h1>
+			<h3>Enter the prompt and witness the magic of AI</h3>
+            <input id="tbar" type="text" name="fname">
+
+			<form id="generateForm" method="post" action="">
+				{% csrf_token %}
+				<input type="text" id="imgDescription" placeholder="Enter image description">
+				<button type="submit" id="generateBtn">Generate Image</button>
+			</form>
+		
+			<div id="imageContainer"></div>
+		
+		
+			
+
+
+
+
+		</div>
+	</div>
+
+  
+ 
+    <script>
+        document.getElementById("generateForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var imgDescription = document.getElementById("imgDescription").value;
+            if (imgDescription) {
+                document.getElementById("imageContainer").innerHTML = "Generating...";
+                generateImage(imgDescription);
+            } else {
+                alert("Please enter a description to generate an image.");
+            }
+        });
+
+        function generateImage(imageDescription) {
+            fetch("", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-CSRFToken": document.querySelector('input[name="csrfmiddlewaretoken"]').value
+                },
+                body: "img_description=" + encodeURIComponent(imageDescription)
+            })
+            .then(response => response.json())
+            .then(result => {
+                var generatedImage = new Image();
+                generatedImage.src = result.img_url;
+                generatedImage.onload = function() {
+                    document.getElementById("imageContainer").innerHTML = "";
+                    document.getElementById("imageContainer").appendChild(generatedImage);
+                };
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while generating the image.");
+            });
+        }
+    </script>
+
+<script src=
+"/node_modules/particles.js/particles.js">
+</script>
+<script src=
+"/node_modules/particles.js/demo/js/app.js">
+</script>
+<script>
+function myFunction(x) {
+x.classList.toggle("change");
+
+document.getElementById('myDropdown').style.display = document.getElementById('myDropdown').style.display =='block' ?   'none' : 'block';
+}
+</script>
+</body>
+
+</html>
