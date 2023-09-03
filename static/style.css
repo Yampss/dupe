@@ -1,0 +1,222 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	/* display: none; */
+}
+.bg {
+	position: absolute;
+	text-align: center;
+	top: 15%;
+	left: 25%;
+	width: 50%;
+	border-radius: 15px;
+	border: 1px solid #efefef20;
+	background-color: #232424;
+	background-size: cover;
+}
+
+#imageContainer {
+    width: 100%;
+    height: 100vh;
+}
+
+.heading {
+	padding-bottom: 10%;
+}
+
+.heading h1 {
+	color: limegreen;
+	font-size: 4rem;
+	text-transform: uppercase;
+	margin: 1em 0.7rem;
+}
+.heading h1 span {
+	font-size: 3rem;
+}
+
+.heading h3 {
+	color: wheat;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+#particles-js {
+	background: black;
+	height: 100vh;
+}
+#to2 {
+	background-color: rgba(94, 91, 91, 0.701);
+	color: rgb(244, 243, 241);
+	border-radius: 15px 0px 15px 0px;
+	padding: 5px;
+}
+/* #generateForm {
+	color: rgb(3, 13, 23);
+	border: 1px solid black;
+	background-color: blanchedalmond;
+	border-radius: 8px;
+	padding: 5px;
+} */
+/* .dropdown {
+    position: absolute;
+    right: 200;
+    top: 10px; */
+
+/* } */
+.container {
+	display: inline-block;
+	cursor: pointer;
+	position: absolute;
+	right: 200;
+	top: 10px;
+	margin-left: 1350px;
+}
+
+/* #imageContainer {
+	color: whitesmoke;
+} */
+
+.bar1,
+.bar2,
+.bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: #333;
+	margin: 6px 0;
+	transition: 0.4s;
+	margin-right: 20px;
+	font-size: 10px;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+	opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+}
+.dropdown-content {
+	display: none;
+	font-size: 30px;
+}
+
+/* --------------- Button ------------------*/
+
+/*Clearing Floats*/
+.cf:before,
+.cf:after {
+	content: "";
+	display: table;
+}
+.cf:after {
+	clear: both;
+}
+.cf {
+	zoom: 1;
+}
+/* Form wrapper styling */
+.form-wrapper {
+	position: relative;
+	width: 300px;
+	height: 52px;
+	margin: 72px auto 30px auto;
+	border-radius: 40px;
+	background: #fff;
+	box-shadow: 2px 2px 3px #fff7;
+}
+/* Form text input */
+.form-wrapper input {
+	height: 22px;
+	padding: 15px 5px 15px 25px;
+	float: left;
+	border: 0;
+	background: #fff;
+	border-radius: 40px;
+}
+.form-wrapper input:focus {
+	outline: 0;
+	background: #fff;
+}
+.form-wrapper input::-webkit-input-placeholder {
+	color: #999;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.form-wrapper input:-moz-placeholder {
+	color: #999;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.form-wrapper input:-ms-input-placeholder {
+	color: #999;
+	font-weight: normal;
+	font-style: italic;
+	border-style: none;
+}
+
+/* Form submit button */
+.form-wrapper button {
+	overflow: visible;
+	position: absolute;
+	top: 0px;
+	right: -1px;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	height: 52px;
+	width: 100px;
+	color: #000;
+	text-transform: uppercase;
+	font-weight: bold;
+	background: limegreen;
+	border: 2px solid #5bf75b;
+	border-radius: 40px;
+}
+.form-wrapper button:hover {
+	background-color: #5bf75b;
+}
+.form-wrapper button:active,
+.form-wrapper button:focus {
+	background-color: #5bf75b;
+	outline: 0;
+}
+.form-wrapper button::-moz-focus-inner {
+	/* remove extra button spacing for Mozilla Firefox */
+	border: 0;
+	padding: 0;
+}
+
+/* ------------------------------------------------------------ */
+
+@media only screen and (max-width: 732px) {
+	.body {
+		width: 100vw;
+		height: 100vh;
+		display: none;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+
+	.bg {
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+@media only screen and (max-width: 625px) {
+	.heading {
+		font-size: 1rem;
+	}
+}
