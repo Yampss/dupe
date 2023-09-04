@@ -9,6 +9,7 @@ body {
 	text-align: center;
 	top: 15%;
 	left: 25%;
+
 	width: 50%;
 	border-radius: 15px;
 	border: 1px solid #efefef20;
@@ -16,9 +17,9 @@ body {
 	background-size: cover;
 }
 
-#imageContainer {
+ #imageContainer {
     width: 100%;
-    height: 100vh;
+    height: max-content;
 }
 
 .heading {
