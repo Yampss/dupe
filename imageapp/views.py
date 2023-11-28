@@ -1,21 +1,22 @@
-import openai
+from openai import OpenAI
 from django.shortcuts import render
 from django.http import JsonResponse
-from openai import Image
 import urllib.request
 from PIL import Image as PILImage
 
-openai.api_key = "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"  # Replace with your OpenAI API key
+client = OpenAI()
+OpenAI.api_key = "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"  # Replace with your OpenAI API key
 
 
 def generate_image(image_description):
-    img_response = Image.create(
+    img_response = client.images.generate(
         prompt=image_description,
+        model="dall-e-3"
         n=1,
-        size="512x512"
+        size="1024x1024"
     )
 
-    img_url = img_response['data'][0]['url']
+    img_url = img_response.data[0].url
     urllib.request.urlretrieve(img_url, 'imageapp/static/img.png')
     img = PILImage.open("imageapp/static/img.png")
     return img
